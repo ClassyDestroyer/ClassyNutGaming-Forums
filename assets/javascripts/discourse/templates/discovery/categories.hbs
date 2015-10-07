@@ -27,16 +27,14 @@
                                             {{category-unread category=c}}
                                         {{/if}}
                                     {{/if}}
-                                    <div class="subcategory-container">
-                                        {{#if c.subcategories}}
-                                            <div class='subcategories'>
-                                                {{#each s in c.subcategories}}
-                                                    {{category-link s hideParent="true"}}
-                                                    {{category-unread category=s}}
-                                                {{/each}}
-                                            </div>
-                                        {{/if}}
-                                    </div>
+                                    {{#if c.subcategories}}
+                                        <div class='subcategories'>
+                                            {{#each s in c.subcategories}}
+                                                {{category-link s hideParent="true"}}
+                                                {{category-unread category=s}}
+                                            {{/each}}
+                                        </div>
+                                    {{/if}}
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
