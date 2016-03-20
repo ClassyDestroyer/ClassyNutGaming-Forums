@@ -5,9 +5,7 @@
       <h3>{{model.name}}</h3>
     {{else}}
       <label for="name">{{i18n 'admin.groups.name'}}</label>
-      {{text-field name="name" value=model.name placeholderKey="admin.groups.name_placeholder"}}
-      {{text-field name="nameid" value=model.id placeholderKey="admin.groups.name_placeholder"}}
-      {{text-field name="namegroupid" value=model.group_id placeholderKey="admin.groups.name_placeholder"}}
+      {{text-field name="name" value=model.id placeholderKey="admin.groups.name_placeholder"}}
     {{/if}}
   </div>
 
