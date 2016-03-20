@@ -4,8 +4,8 @@
     {{#if model.automatic}}
       <h3>{{model.name}}</h3>
     {{else}}
-      <label for="name">{{i18n 'admin.groups.name'}}</label>
-      {{text-field name="name" value=model.id placeholderKey="admin.groups.name_placeholder"}}
+      <label for="name">{{i18n 'admin.groups.name'}} {{model.id}}</label>
+      {{text-field name="name" value=model.name placeholderKey="admin.groups.name_placeholder"}}
     {{/if}}
   </div>
 
