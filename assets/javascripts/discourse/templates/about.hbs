@@ -20,13 +20,13 @@
 
     <section class='about owners'>
         <h3>The Owners</h3>
-        {{model.method(:admins).owner}}
 
         {{#if model.owner}}
           {{#each a in model.owner}}
             {{user-small user=a}}
           {{/each}}
         {{/if}}
+        {{model.co}}
         {{#if model.co}}
           {{#each a in model.co}}
             {{user-small user=a}}
