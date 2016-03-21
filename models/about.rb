@@ -54,7 +54,7 @@ class About
   end
   
   def owner
-    @owner ||= User.where(primary_group_id: 41)
+    @owner ||= User.where(admin: true)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
   end
