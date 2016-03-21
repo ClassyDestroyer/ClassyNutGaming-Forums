@@ -17,36 +17,22 @@
       <h2>{{i18n 'about.title' title=model.title}}</h2>
       <p>{{model.description}}</p>
     </section>
-    
-    <section class='about test'>
-        <h3>Test</h3>
+
+    <section class='about owners'>
+        <h3>The Owners</h3>
+
+        {{#if model.owner}}
+          {{#each a in model.owner}}
+            {{user-small user=a}}
+          {{/each}}
+        {{/if}}
+        {{#if model.co}}
+          {{#each a in model.co}}
+            {{user-small user=a}}
+          {{/each}}
+        {{/if}}
         <div class='clearfix'></div>
-
-      </section>
-
-    {{#if model.owner}}
-      <section class='about owner'>
-        <h3>{{i18n 'about.our_owner'}}</h3>
-
-        {{#each a in model.owner}}
-          {{user-small user=a}}
-        {{/each}}
-        <div class='clearfix'></div>
-
-      </section>
-    {{/if}}
-    
-    {{#if model.co}}
-      <section class='about co'>
-        <h3>{{i18n 'about.our_co'}}</h3>
-
-        {{#each a in model.co}}
-          {{user-small user=a}}
-        {{/each}}
-        <div class='clearfix'></div>
-
-      </section>
-    {{/if}}
+    </section>
     
     {{#if model.admins}}
       <section class='about admins'>
