@@ -42,7 +42,9 @@ class About
   end
 
   def admins
-    @admins ||= User.method(:moderators).owner
+    @admins ||= User.where(admin: true)
+                    .where.not(id: Discourse::SYSTEM_USER_ID)
+                    .order(:username_lower)
   end
   
   def co
