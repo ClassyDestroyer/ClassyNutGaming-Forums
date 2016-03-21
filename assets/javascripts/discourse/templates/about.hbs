@@ -22,12 +22,16 @@
         <h3>The Owners</h3>
 
         {{#if model.owner}}
+        1
           {{#each a in model.owner}}
+          2
             {{user-small user=a}}
           {{/each}}
         {{/if}}
         {{#if model.co}}
+        3
           {{#each a in model.co}}
+          4
             {{user-small user=a}}
           {{/each}}
         {{/if}}
