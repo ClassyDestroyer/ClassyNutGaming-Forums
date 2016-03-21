@@ -42,7 +42,7 @@ class About
   end
 
   def admins
-    @admins ||= User.where(admin: true)
+    @admins ||= User.where(primary_group_id: 41)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
     @source ||= About.method(:where).source_location
