@@ -18,13 +18,17 @@
       <p>{{model.description}}</p>
     </section>
 
-    <section class='about owner'>
-      <h3>The Owner</h3>
+    {{#if model.owner}}
+      <section class='about owner'>
+        <h3>{{i18n 'about.our_owner'}}</h3>
 
-      {{user-small user=User.where(primary_group_id: 41)}}
-      <div class='clearfix'></div>
+        {{#each a in model.owner}}
+          {{user-small user=a}}
+        {{/each}}
+        <div class='clearfix'></div>
 
-    </section>
+      </section>
+    {{/if}}
     
     {{#if model.co}}
       <section class='about co'>
