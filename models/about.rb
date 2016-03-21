@@ -45,6 +45,7 @@ class About
     @admins ||= User.where(admin: true)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
+    @source ||= User.method(:where).source_location
   end
   
   def co
