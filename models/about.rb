@@ -4,7 +4,7 @@ class About
 
   attr_accessor :moderators,
                 :admins,
-                :co-owner,
+                :co,
                 :owner
 
   def self.stats_cache_key
@@ -47,8 +47,8 @@ class About
                     .order(:username_lower)
   end
   
-  def co-owner
-    @co-owner ||= User.where(primary_group_id: 2)
+  def co
+    @co ||= User.where(primary_group_id: 2)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
   end
