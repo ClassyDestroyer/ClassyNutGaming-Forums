@@ -20,6 +20,7 @@
 
     <section class='about owners'>
         <h3>The Owners</h3>
+        {{model.method(:admins).owner}}
 
         {{#if model.owner}}
           {{#each a in model.owner}}
