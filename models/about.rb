@@ -48,13 +48,13 @@ class About
   end
   
   def co
-    @co ||= User.where(primary_group_id: 2)
+    @co ||= User.where(primary_group_id: 42)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
   end
   
   def owner
-    @owner ||= User.where(primary_group_id: 1)
+    @owner ||= User.where(primary_group_id: 41)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
   end
