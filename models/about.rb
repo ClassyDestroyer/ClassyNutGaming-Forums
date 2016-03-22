@@ -42,10 +42,12 @@ class About
   end
 
   def admins
-    @admins ||= User.where(primary_group_id: 41)
+    @admins ||= User.where(admin: true)
                     .where.not(id: Discourse::SYSTEM_USER_ID)
                     .order(:username_lower)
-    @source ||= About.method(:where).source_location
+    @owner ||= User.where(primary_group_id: 41)
+                    .where.not(id: Discourse::SYSTEM_USER_ID)
+                    .order(:username_lower)
   end
   
   def co
@@ -55,9 +57,7 @@ class About
   end
   
   def owner
-    @owner ||= User.where(admin: true)
-                    .where.not(id: Discourse::SYSTEM_USER_ID)
-                    .order(:username_lower)
+    
   end
 
   def stats
