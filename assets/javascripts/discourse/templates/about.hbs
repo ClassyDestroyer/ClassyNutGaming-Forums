@@ -21,9 +21,9 @@
     <section class='about owners'>
         <h3>The Owners</h3>
 
-        <% @owner.each do |ownr| %>
+        {{ @owner.each do |ownr| }}
         test1
-        <% end %>
+        {{ end }}
         {{#if model.source}}
         {{model.source}}
         1
