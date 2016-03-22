@@ -21,10 +21,10 @@
     <section class='about owners'>
         <h3>The Owners</h3>
 
-        {{#if model.owner}}
+        {{#if model.admins}}
         {{model.owner}}
         1
-          {{#each o in model.owner}}
+          {{#each o in model.admins}}
           2
             {{user-small user=o}}
           {{/each}}
