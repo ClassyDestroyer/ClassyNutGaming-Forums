@@ -18,17 +18,10 @@
       <p>{{model.description}}</p>
     </section>
     
-    {{#if model.admins}}
-      <section class='about admins'>
-        <h3>The Owners</h3>
-
-        {{#each a in model.admins}}
-          {{user-small user=a}}
-        {{/each}}
-        <div class='clearfix'></div>
-
-      </section>
-    {{/if}}
+    <section class='about admins'>
+      <h3>The Owners</h3>
+      <div class='clearfix'></div>
+    </section>
 
     {{#if model.moderators}}
       <section class='about moderators'>
