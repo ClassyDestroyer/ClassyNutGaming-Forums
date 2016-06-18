@@ -20,21 +20,24 @@
 
     <section class='about owners'>
       <h3>The Owners</h3>
+      
+      {{#each model.admins as |a|}}
+        {{user-info user=a}}
+      {{/each}}
       <div class='clearfix'></div>
-
     </section>
 
     <section class='about admins'>
       <h3>Our Admins</h3>
       <div class='clearfix'></div>
-
     </section>
 
     <section class='about moderators'>
       <h3>Our Moderators</h3>
 
-      <div class='users'>
-      </div>
+      {{#each model.moderators as |m|}}
+        {{user-info user=m}}
+      {{/each}}
       <div class='clearfix'></div>
     </section>
 
